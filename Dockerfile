@@ -15,5 +15,5 @@ RUN cd /build/go-boilerplate/cmd && go build
 
 EXPOSE 8080
 
-ENTRYPOINT [ "/build/go-boilerplate/cmd/server.go" ]
+ENTRYPOINT [ "/build/go-boilerplate/cmd/cmd" ]
 
