@@ -3,8 +3,8 @@ package controller
 import (
 	"net/http"
 
-	"github.com/go-boilerplate/pkg/helpers"
-	"github.com/go-boilerplate/pkg/models"
+	"github.com/nahuelmarianolosada/go-boilerplate/pkg/helpers"
+	"github.com/nahuelmarianolosada/go-boilerplate/pkg/models"
 )
 
 // Check returns the health of the service and DB

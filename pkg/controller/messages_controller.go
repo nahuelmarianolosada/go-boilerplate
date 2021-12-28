@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/go-boilerplate/pkg/helpers"
-	"github.com/go-boilerplate/pkg/models"
-	"github.com/go-boilerplate/pkg/persistence"
+	"github.com/nahuelmarianolosada/go-boilerplate/pkg/helpers"
+	"github.com/nahuelmarianolosada/go-boilerplate/pkg/models"
+	"github.com/nahuelmarianolosada/go-boilerplate/pkg/persistence"
 	"gopkg.in/go-playground/validator.v9"
 )
 

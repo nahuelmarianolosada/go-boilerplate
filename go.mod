@@ -1,6 +1,6 @@
-module github.com/go-boilerplate
+module github.com/nahuelmarianolosada/go-boilerplate
 
-go 1.12
+go 1.16
 
 require (
 	github.com/go-playground/universal-translator v0.18.0 // indirect
