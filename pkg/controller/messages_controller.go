@@ -41,6 +41,9 @@ func (h Handler) GetMessages(w http.ResponseWriter, r *http.Request) {
 	recipient := r.URL.Query().Get("recipient")
 	start := r.URL.Query().Get("start")
 	limit := r.URL.Query().Get("limit")
+	if limit == "" {
+		limit = "100"
+	}
 
 	if recipient == "" || start == "" {
 		http.Error(w, "recipient or start param missing", http.StatusBadRequest)
@@ -51,13 +54,11 @@ func (h Handler) GetMessages(w http.ResponseWriter, r *http.Request) {
 	startInt,_ := strconv.Atoi(start)
 	limitInt,_ := strconv.Atoi(limit)
 
-	if limit == "" {
-		limit = "5"
-	}
+	
 	messages, errGetAll := persistence.GetAllMessages(recipientInt, startInt, limitInt)
 	if errGetAll != nil {
 		http.Error(w, errGetAll.Error(), http.StatusInternalServerError)
 	}
 
-	helpers.RespondJSON(w, messages)
+	helpers.RespondJSON(w, map[string]interface{}{"messages":messages} )
 }

@@ -9,9 +9,9 @@ import (
 
 func GetAllMessages(recipient, start, limit int) ([]models.Message, error) {
 	db := GetConnection()
-	q := `SELECT ID, SENDER, RECIPIENT, TYPE, TEXT, LAST_UPDATED FROM MESSAGE WHERE RECIPIENT = ? AND ID >= ? `
+	q := `SELECT ID, SENDER, RECIPIENT, TYPE, TEXT, LAST_UPDATED FROM MESSAGE WHERE RECIPIENT = ? AND ID >= ? ORDER BY ID ASC LIMIT ?`
 
-	rows, err := db.Query(q, recipient, start)
+	rows, err := db.Query(q, recipient, start, limit)
 	if err != nil {
 		return nil, err
 	}
