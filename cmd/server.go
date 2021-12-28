@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/challenge/pkg/auth"
-	"github.com/challenge/pkg/controller"
+	"github.com/go-boilerplate/pkg/auth"
+	"github.com/go-boilerplate/pkg/controller"
 )
 
 const (

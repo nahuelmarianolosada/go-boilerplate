@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/challenge/pkg/models"
+	"github.com/go-boilerplate/pkg/models"
 )
 
 func GetAllMessages(recipient, start, limit int) ([]models.Message, error) {

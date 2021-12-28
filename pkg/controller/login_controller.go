@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/challenge/pkg/auth"
-	"github.com/challenge/pkg/helpers"
-	"github.com/challenge/pkg/models"
-	"github.com/challenge/pkg/persistence"
+	"github.com/go-boilerplate/pkg/auth"
+	"github.com/go-boilerplate/pkg/helpers"
+	"github.com/go-boilerplate/pkg/models"
+	"github.com/go-boilerplate/pkg/persistence"
 	"gopkg.in/go-playground/validator.v9"
 )
 

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/challenge/pkg/models"
+	"github.com/go-boilerplate/pkg/models"
 )
 
 func CreateUser(u models.User) (int64, error) {
