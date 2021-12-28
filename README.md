@@ -20,3 +20,10 @@ go run cmd/server.go
 
 ##### Note
 You can remove/modify this file for documenting your solution.
+
+
+##### How to run it
+go run cmd/server.Go
+
+docker build -t goboilerplate .
+docker run -p 8080:8080 -tid goboilerplate
