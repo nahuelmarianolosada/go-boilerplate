@@ -16,3 +16,4 @@ EXPOSE 8080
 
 ENTRYPOINT [ "/build/go-boilerplate/cmd/cmd" ]
 
+ENV DOCKER_ENV "$production"

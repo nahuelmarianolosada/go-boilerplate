@@ -3,6 +3,7 @@ package persistence
 import (
 	"database/sql"
 	"fmt"
+	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -12,7 +13,11 @@ var db *sql.DB
 func init() {
 	var err error
 
-	db, err = sql.Open("sqlite3", "data.sqlite")
+	if env := os.Getenv("DOCKER_ENV"); env != "production" {
+		db, err = sql.Open("sqlite3", "file::memory:?cache=shared")
+	} else {
+		db, err = sql.Open("sqlite3", "data.sqlite")
+	}
 	if err != nil {
 		panic(err)
 	}

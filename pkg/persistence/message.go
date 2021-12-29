@@ -2,7 +2,6 @@ package persistence
 
 import (
 	"errors"
-	"time"
 
 	"github.com/nahuelmarianolosada/go-boilerplate/pkg/models"
 )
@@ -50,7 +49,7 @@ func CreateMessage(m models.Message) (*models.Message, error) {
 	defer stmt.Close()
 
 	contentText, contentType := m.Content.Text, m.Content.Type
-	m.LastUpdated = time.Now()
+	
 	r, err := stmt.Exec(m.Sender, m.Recipient, &contentType, &contentText, &m.LastUpdated)
 	if err != nil {
 		return nil, err

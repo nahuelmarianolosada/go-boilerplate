@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/nahuelmarianolosada/go-boilerplate/pkg/helpers"
 	"github.com/nahuelmarianolosada/go-boilerplate/pkg/models"
@@ -26,6 +27,8 @@ func (h Handler) SendMessage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	
+	newMessageQuery.LastUpdated = time.Now()
+
 	newMsg, errMsg := persistence.CreateMessage(newMessageQuery)
 	if errMsg != nil {
 		http.Error(w, errMsg.Error(), http.StatusInternalServerError)
